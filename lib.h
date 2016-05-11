@@ -33,5 +33,6 @@ int initArray(EUser* struc,int cant,int value);
  int checkByString(EUser* struc,int cant,char* strToCheck );
  int addItemStrings(EUser* struc,int cant,char* message,int IsEmptyValue,int *UID);
  int findEmptyUser(EUser* struc,int cant, int value,int printFull);
+ int findEmptyc(Ecomment* struc,int cant, int value,int printFull);
 
 #endif // LIB_H_INCLUDED

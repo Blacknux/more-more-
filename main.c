@@ -6,10 +6,10 @@
 #include "lib.h"
 
 #define TAM_user 5
-#define TAM_comment 5000
+#define TAM_comment 500
 int modifyItemByStr(EUser* struc,int cant,char* idToModify);
 int checkById(Ecomment* struc, int cant,int idToCheck);
-
+int oneLike(Ecomment *struc,int cant);
 //
 
 int main()
@@ -20,7 +20,7 @@ int main()
     int UID=1;
     int CID=1;
     EUser user[TAM_user];
-    Ecomment comment[TAM_comment];
+    Ecomment comment[1500];
     EUser DatosUser[2]={{"NAhuel","Nah","30998992","nah@mio.com",0},{"Jose","klo","30998asdffs","nahssssssss@mio.com",0}};
     Ecomment DatosComment[2]={{1,"Hola coment 1","Nah",2,0},{2,"Hola coment 2","Nah",1,0}};
     char seguir='s';
@@ -31,16 +31,16 @@ int main()
     int auxiliar;
 
     initArray(user,TAM_user,1);
-    initArrayComm(comment,TAM_comment,1);
+    initArrayComm(&comment,1500,1);
 
     for(i=0;i<2;i++)
     {
         user[i]=DatosUser[i];
     }
-//    for(i=0;i<2;i++)
-//    {
-//        comment[i]=DatosComment[i];
-//    }
+    for(i=0;i<2;i++)
+    {
+        comment[i]=DatosComment[i];
+    }
 
     do
     {
@@ -65,7 +65,7 @@ int main()
                 if(user[i].isEmpty==0)
                 {
                     //printf("\n\nPersona Nro-%d\n",i+1);
-                    printf("Nick: %s\nNombre: %s\nmail: %s\nPassword: %s\n",user[i].nick, user[i].name,user[i].mail,user[i].password);
+                    printf("Nick: %s\nNombre: %s\nmail: %s\nPassword: %s\nLikes: %d\n",user[i].nick, user[i].name,user[i].mail,user[i].password);
                 }
             }
             printf("Presione una tecla pra continuar....");
@@ -89,21 +89,30 @@ int main()
 //           printf("Error en borrado reintente");
             break ;
         case 4:
-                addItemStringsComm(user,comment,TAM_comment,1,&CID);
+                addItemStringsComm(user,comment,1500,1,&CID);
 
             break;
         case 5:
-            for(i=0;i<TAM_comment;i++)
+            oneLike(comment,1500);
+            case 25:
+                for(i=0;i<5;i++)
             {
+            comment[i].id=i+1;
+                comment[i].isEmpty=0;
+            }
+            for(i=0;i<1500;i++)
+            {
+
                 if(comment[i].isEmpty==0)
                 {
-                    printf("\nID: %d\nComentario:\n%s\n\tAutor: %s",comment[i].id,comment[i].comment,comment[i].nickUser);
+                    printf("\nID: %d\nComentario:\n%s\n\tAutor: %s\nLikeit: %d\n",comment[i].id,comment[i].comment,comment[i].nickUser,comment[i].contLike);
                 }
                 else
                 {
                 break;
                 }
             }
+            break;
             break;
         case 8:
             //savArrayStructToFile(user,5);
@@ -133,7 +142,7 @@ int addItemStringsComm(EUser* userArray,Ecomment* struc,int cant,int IsEmptyValu
 
     if(struc!=NULL&& cant >0)
     {
-        indice=findEmptyUser(struc,cant,IsEmptyValue,1);
+        indice=findEmptyc(struc,cant,IsEmptyValue,1);
         getLetters(user,"Ingrese su Nick: ","Solo letras\n",2,20);
         getString(pass,"Ingrese su password: ",4,50);
         firstUpperString(user,strlen(user));
@@ -219,3 +228,20 @@ int checkById(Ecomment* struc, int cant,int idToCheck)
     }
     return retorno;
 }
+
+int oneLike(Ecomment *struc,int cant)
+{
+    int retorno=-1;
+    int id;
+    int indiceComment;
+    getInt(&id,"Ingrese el id del comentario: ","Error solo numero de 1 -1500",0,1500);
+    indiceComment=checkById(struc,cant,id);
+    if(indiceComment!=-1)
+    {
+        struc[indiceComment].contLike++;
+        retorno =0;
+    }
+    return retorno;
+}
+
+

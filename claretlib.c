@@ -78,7 +78,7 @@ int getString(char *input,char* message,int intMin,int intMax )
 
 int getLetters(char* input,char* messageInput,char* eMessage,int lengthMin,int lengthMax)
 {
-    int retorno=-1;
+    int retorno=0;
     int i;
     int getstFlag=0;
     int strleng;
@@ -98,20 +98,23 @@ int getLetters(char* input,char* messageInput,char* eMessage,int lengthMin,int l
             if(/*(strleng>lengthMin)&&*/(auxChar[i]>='a'&& auxChar[i]<='z')||(auxChar[i]>='A'&&auxChar[i]<='Z'))
             {
 
-                 strcpy(input,auxChar);
-                retorno=0;
-                break;
+                 input[i]=auxChar[i];
+
 
             }
             else
             {
                 printf("%s",eMessage);
+                retorno=-1;
                 break;
 
             }
 
         }
     }
+
+
+
     return retorno;
 }
 
@@ -382,6 +385,26 @@ int firstUpper(EUser* struc, int cant)
 
 }
 
+  int findEmptyc(Ecomment* struc,int cant, int value,int printFull)
+{
+    int i;
+    int retorno=-1;
+    if(struc!=NULL && cant>0)
+    {
+        for (i=0; i<cant; i++)
+        {
+            if(struc[i].isEmpty==value)
+            {
+                retorno=i;
+                break;
+            }
+        }
+        if (retorno==-1 && printFull==1)
+            printf("No hay lugar");
+    }
+    return retorno;
+
+}
 /**
 *\brief Recibe una puntero a char y pone la primer letra en mayusculas
 *\param char* strToUpper Cadena a ser modificada

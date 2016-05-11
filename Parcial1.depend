@@ -27,3 +27,31 @@
 
 1462938056 /home/knux/Documents/github/Parcial1/lib.h
 
+1462983729 source:/root/Desktop/Programacion C/Github/more-more-/claretlib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"claretlib.h"
+	"lib.h"
+
+1462980796 /root/Desktop/Programacion C/Github/more-more-/claretlib.h
+
+1462983700 /root/Desktop/Programacion C/Github/more-more-/lib.h
+
+1462981065 source:/root/Desktop/Programacion C/Github/more-more-/lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"claretlib.h"
+	"lib.h"
+
+1462983739 source:/root/Desktop/Programacion C/Github/more-more-/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"claretlib.h"
+	"lib.h"
+

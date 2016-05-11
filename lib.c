@@ -21,35 +21,39 @@ int addItemStrings(EUser* struc,int cant,char* message,int IsEmptyValue,int *UID
     int retorno=-1;
     int indice,exist;
     char auxChar[4096];
-
     if(struc!=NULL&& cant >0)
     {
         indice=findEmptyUser(struc,cant,IsEmptyValue,1);
         if(indice!=-1)
         {
-            getString(auxChar,message,2,120);
-            firstUpperString(auxChar,11);
-            printf("\n\n%s\n\n", auxChar);
-            exist=checkByString(struc,cant,auxChar);
-            /** Si el indice existe y el valor del isEmpty es distinto del que se pasa por parametro
-                entonces el usuario existe*/
-            if(exist!=-1 && struc[exist].isEmpty!=IsEmptyValue)
+            if(getString(auxChar,message,2,120)!=-1)
             {
-                printf("Usuario registrado\n");
-            }
-            else
-            {
-                strcpy(struc[indice].nick,auxChar);
-                if((getLetters(struc[indice].name,"Ingrese su nombre: ","Error Solo letras y no mayor a 20\n",2,20)!=-1)&&
-                        (getMail(struc[indice].mail,"Ingrese su mail: ","Error en formato de mail, Ej: Nahuel@mail.com",6,50)!=-1)&&(getString(struc[indice].password,"Ingrese su password: ",2,50)!=-1))//Dan ok recien ahi cambiamos el valor de is Empty
+
+                firstUpperString(auxChar,11);
+                //printf("\n\n%s\n\n", auxChar);
+                exist=checkByString(struc,cant,auxChar);
+                /** Si el indice existe y el valor del isEmpty es distinto del que se pasa por parametro
+                    entonces el usuario existe*/
+                if(exist!=-1 && struc[exist].isEmpty!=IsEmptyValue)
                 {
-                    struc[indice].isEmpty=0;
+                    printf("Usuario registrado\n");
+                }
+                else
+                {
+                    strcpy(struc[indice].nick,auxChar);
+                    if((getLetters(struc[indice].name,"Ingrese su nombre: ","Error Solo letras y no mayor a 20\n",2,20)!=-1)&&
+                            (getMail(struc[indice].mail,"Ingrese su mail: ","Error en formato de mail, Ej: Nahuel@mail.com",6,50)!=-1)&&(getString(struc[indice].password,"Ingrese su password: ",2,50)!=-1))//Dan ok recien ahi cambiamos el valor de is Empty
+                    {
+                        struc[indice].isEmpty=0;
 
 
 
-                    retorno=0;
+                        retorno=0;
+                    }
                 }
             }
+            else
+            printf("Error en nick");
         }
     }
     return retorno;
