@@ -21,6 +21,8 @@ int main()
     int CID=1;
     EUser user[TAM_user];
     Ecomment comment[TAM_comment];
+    EUser DatosUser[2]={{"NAhuel","Nah","30998992","nah@mio.com",0},{"Jose","klo","30998asdffs","nahssssssss@mio.com",0}};
+    Ecomment DatosComment[2]={{1,"Hola coment 1","Nah",2,0},{2,"Hola coment 2","Nah",1,0}};
     char seguir='s';
     char itemdel[233];
     char nickChange[233];
@@ -31,8 +33,14 @@ int main()
     initArray(user,TAM_user,1);
     initArrayComm(comment,TAM_comment,1);
 
-
-
+    for(i=0;i<2;i++)
+    {
+        user[i]=DatosUser[i];
+    }
+//    for(i=0;i<2;i++)
+//    {
+//        comment[i]=DatosComment[i];
+//    }
 
     do
     {
