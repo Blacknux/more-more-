@@ -80,7 +80,6 @@ int checkByString(EUser* struc,int cant,char* strToCheck )
 
 }
 
-
 int initArray(EUser* struc,int cant,int value)
 {
     int i;

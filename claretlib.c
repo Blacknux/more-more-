@@ -5,8 +5,6 @@
 #include "claretlib.h"
 #include "lib.h"
 
-
-
 #define TAM 5
 void prueba(void)
 {

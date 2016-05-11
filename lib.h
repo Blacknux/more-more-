@@ -12,7 +12,6 @@ typedef struct
 }Ecomment;
 #endif // __EARRAY
 
-
 #ifndef __CLARETUSER
 #define __CLARETUSER
 typedef struct

@@ -5,8 +5,6 @@
 #include "claretlib.h"
 #include "lib.h"
 
-
-
 #define TAM_user 5
 #define TAM_comment 5000
 int modifyItemByStr(EUser* struc,int cant,char* idToModify);

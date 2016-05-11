@@ -8,7 +8,6 @@
 //    int contLike;
 //    int isEmpty;
 //
-//
 //}Ecomment;
 //#endif // __EARRAY
 //
