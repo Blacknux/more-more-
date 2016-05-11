@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1462935620 source:/home/knux/Documents/github/Parcial1/claretlib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"claretlib.h"
+	"lib.h"
+
+1462935605 /home/knux/Documents/github/Parcial1/claretlib.h
+
+1462936872 source:/home/knux/Documents/github/Parcial1/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"claretlib.h"
+	"lib.h"
+
+1462936860 source:/home/knux/Documents/github/Parcial1/lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"claretlib.h"
+	"lib.h"
+
+1462936860 /home/knux/Documents/github/Parcial1/lib.h
+
