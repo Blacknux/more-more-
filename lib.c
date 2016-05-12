@@ -93,6 +93,7 @@ int initArray(EUser* struc,int cant,int value)
         for (i=0; i<cant; i++)
         {
             struc[i].isEmpty=value;
+            struc[i].cantComment=0;
         }
         retorno=0;
     }

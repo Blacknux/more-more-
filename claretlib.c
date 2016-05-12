@@ -32,8 +32,12 @@ void prueba(void)
 
 /**
 *
-*
-*
+*\brief Solicita un string que sea solo letras
+*\param char* input Puntero pasado por parametro donde guardar la cadena despues de validada
+*\param char* message Mensaje de solicitud para la cadena
+*\param int lengthMin Minimo de caracteres que debe poseer la cadena
+*\param int lengthMax maximo de acaracteres que debe poseer la cadena
+*\return int  0 si OK -1 si no se pudo realizar
 */
 
 int getString(char *input,char* message,int intMin,int intMax )
@@ -53,14 +57,14 @@ int getString(char *input,char* message,int intMin,int intMax )
         }
         else
         {
-            if(strlen(auxChar)<intMin)
+            if(strlen(auxChar)<intMin || strlen(auxChar)>intMax)
             {
-                printf("muy cort@\n");
+                printf("Error en el largo de la cadena, debe tener entre %d y %d letras\n");
             }
-            if(strlen(auxChar)>intMax)
-            {
-                printf("muy larg@\n");
-            }
+//            if()
+//            {
+//                printf("muy larg@\n");
+//            }
 
             //printf( "%s",errorMessage);
         }
@@ -69,11 +73,15 @@ int getString(char *input,char* message,int intMin,int intMax )
 
 }
 
-
 /**
 *
-*
-*
+*\brief Solicita un string que sea solo letras
+*\param char* input Puntero pasado por parametro donde guardar la cadena despues de validada
+*\param char* messageInput Mensaje de solicitud
+*\param char* eMessage Mensage de error
+*\param int lengthMin Minimo de caracteres que debe poseer la cadena
+*\param int lengthMax maximo de acaracteres que debe poseer la cadena
+*\return int  0 si OK -1 si no se pudo realizar
 */
 
 int getLetters(char* input,char* messageInput,char* eMessage,int lengthMin,int lengthMax)
@@ -120,8 +128,13 @@ int getLetters(char* input,char* messageInput,char* eMessage,int lengthMin,int l
 
 /**
 *
-*
-*
+*\brief Solicita un string que sea solo numeros
+*\param char* input Puntero pasado por parametro donde guardar la cadena despues de validada
+*\param char* messageInput Mensaje de solicitud
+*\param char* eMessage Mensage de error
+*\param int lengthMin Minimo de caracteres que debe poseer la cadena
+*\param int lengthMax maximo de acaracteres que debe poseer la cadena
+*\return int  0 si OK -1 si no se pudo realizar
 */
 
 int getNumbers(char* input,char* messageInput,char* eMessage,int lengthMin,int lengthMax)
@@ -164,8 +177,13 @@ int getNumbers(char* input,char* messageInput,char* eMessage,int lengthMin,int l
 
 /**
 *
-*
-*
+*\brief Solicita un string que sea un mail, validando el formato
+*\param char* input Puntero pasado por parametro donde guardar la cadena despues de validada
+*\param char* messageInput Mensaje de solicitud
+*\param char* eMessage Mensage de error
+*\param int lengthMin Minimo de caracteres que debe poseer la cadena
+*\param int lengthMax maximo de acaracteres que debe poseer la cadena
+*\return int  0 si OK -1 si no se pudo realizar
 */
 int getMail(char* input,char* messageInput,char* eMessage,int lengthMin,int lengthMax)
 {
@@ -222,8 +240,13 @@ int getMail(char* input,char* messageInput,char* eMessage,int lengthMin,int leng
 
 /**
 *
-*
-*
+*\brief Solicita un string que sea un telefono
+*\param char* input Puntero pasado por parametro donde guardar la cadena despues de validada
+*\param char* messageInput Mensaje de solicitud
+*\param char* eMessage Mensage de error
+*\param int lengthMin Minimo de caracteres que debe poseer la cadena
+*\param int lengthMax maximo de acaracteres que debe poseer la cadena
+*\return int  0 si OK -1 si no se pudo realizar
 */
 
 int getPhone(char* input,char* messageInput,char* eMessage,int lengthMin,int lengthMax)
@@ -275,6 +298,16 @@ int getPhone(char* input,char* messageInput,char* eMessage,int lengthMin,int len
     return retorno;
 }
 
+/**
+*
+*\brief Solicita un string que sea solo letras
+*\param char* input Puntero pasado por parametro donde guardar la cadena despues de validada
+*\param char* message Mensaje de solicitud
+*\param char* errorMessage Mensage de error
+*\param int lengthMin Minimo de caracteres que debe poseer la cadena
+*\param int lengthMax maximo de acaracteres que debe poseer la cadena
+*\return int  0 si OK -1 si no se pudo realizar
+*/
 
 int getInt(int* input,char message[], char errorMessage[],int lowLimitRange,int hiLimitRange)
 {

@@ -7,6 +7,7 @@ typedef struct
     char nickUser[50];
     int contLike;
     int isEmpty;
+    char userName[20];
 
 
 }Ecomment;
@@ -21,6 +22,7 @@ typedef struct
     char password[50];
     char mail[50];
     int isEmpty;
+    int cantComment;
 } EUser;
 #endif // __EARRAY
 
