@@ -469,3 +469,22 @@ int firstUpperString(char* strToUpper, int cant)
     }
     return retorno;
 }
+
+
+int getFolat(float *pFloat)
+{
+    float aux;
+    int returnAux=-1;
+    int z;
+    z=scanf("%f",&aux);
+    //printf("%d z\n",z);
+    if(pFloat!=NULL&& z!=0))
+    {
+
+        returnAux=0;
+        *pFloat=aux;
+
+    }
+    return returnAux;
+}
+
